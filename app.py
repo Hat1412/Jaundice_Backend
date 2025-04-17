@@ -19,6 +19,9 @@ def preprocess_image(image_bytes):
     image_array = np.array(image) / 255.0
     return np.expand_dims(image_array, axis=0)
 
+@app.route("/")
+def home():
+    return "Jaundice Detection Backend is Running!"
 
 @app.route("/predict", methods=["POST"])
 def predict():
