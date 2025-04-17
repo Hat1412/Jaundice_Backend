@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the model (adjust filename as needed)
-model = tf.keras.models.load_model('jaundice_model.keras')
+model = tf.keras.models.load_model('jaundice_model.h5')
 
 def preprocess_image(image_bytes):
     image = Image.open(io.BytesIO(image_bytes)).convert('RGB')
