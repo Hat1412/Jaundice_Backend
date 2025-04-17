@@ -4,9 +4,11 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import io
+import os
 
 app = Flask(__name__)
 CORS(app)
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # Load the model (adjust filename as needed)
 model = tf.keras.models.load_model("jaundice_model.h5")
