@@ -3,6 +3,13 @@ from PIL import Image
 import torch
 from torchvision import transforms, models
 
+import os
+import torch
+import streamlit
+
+# or simply:
+torch.classes.__path__ = []
+
 # Load lightweight model
 @st.cache_resource
 def load_model():
