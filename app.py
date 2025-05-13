@@ -77,7 +77,9 @@ st.markdown(
     }
     p {
     text-align: center;}
-    
+    [datatestid = "stFileUploadDropZone"]{
+    background-color: #ffffff;
+    }
     </style>
     """,
     unsafe_allow_html=True
