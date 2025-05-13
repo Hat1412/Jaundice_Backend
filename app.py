@@ -44,9 +44,9 @@ st.markdown(
         font-family: 'Aptos', sans-serif;
     }
     .stMain {
-        background: #000;
+        background: #ffffff;
     }
-    .main-title {
+    .stMarkdown {
         color: #ff0000;
         text-align: center;
         font-size: 2.5rem;
