@@ -47,7 +47,7 @@ st.markdown(
         background: #ffffff;
     }
     .stMarkdown {
-        color: #ff0000;
+        color: #87CEEB;
         text-align: center;
         font-size: 2.5rem;
     }
