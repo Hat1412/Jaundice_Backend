@@ -4,7 +4,7 @@ from torchvision import transforms, models
 from PIL import Image, PngImagePlugin
 import io
 
-st.set_page_config(page_title="Nethvera ")
+st.set_page_config(page_title="Nethvera")
 PngImagePlugin.MAX_TEXT_CHUNK = 10485760  # Increase max text chunk size for PNG images
 # Load model
 @st.cache_resource
@@ -44,10 +44,10 @@ st.markdown(
         font-family: 'Aptos', sans-serif;
     }
     .stMain {
-        background: #ff0000;
+        background: #000;
     }
     .main-title {
-        color: #000;
+        color: #ffffff;
         text-align: center;
         font-size: 2.5rem;
     }
