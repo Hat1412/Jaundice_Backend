@@ -44,10 +44,10 @@ st.markdown(
         font-family: 'Aptos', sans-serif;
     }
     .stMain {
-        background: #ffffff;
+        background: #ff0000;
     }
     .main-title {
-        color: #123b77;
+        color: #000;
         text-align: center;
         font-size: 2.5rem;
     }
