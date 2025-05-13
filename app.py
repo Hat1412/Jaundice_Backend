@@ -47,7 +47,7 @@ st.markdown(
         background: #000;
     }
     .main-title {
-        color: #ffffff;
+        color: #ff0000;
         text-align: center;
         font-size: 2.5rem;
     }
