@@ -108,38 +108,8 @@ uploaded_file = st.file_uploader("", type=["jpg", "jpeg", "png"])
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image", use_container_width=True)
-    pred = predict_image(model, image)
-    st.write(f"Prediction: **{pred}**")
 
-elif camera_image is not None:
-    image = Image.open(io.BytesIO(camera_image.getvalue()))
-    st.image(image, caption="Captured Image", use_container_width=True)
-    pred = predict_image(model, image)
-    st.write(f"Prediction: **{pred}**")
-
-# Contact Us Section
-st.markdown('<h1 class="main-title" id="contact">Contact Us</h1>', unsafe_allow_html=True)
-st.markdown("<p>We'd love to hear from you! Connect with us: </p>", unsafe_allow_html=True)
-
-# Contact links with FontAwesome icons
-st.markdown(
-    """
-    <div class="contact-icons">
-        <a href="https://www.instagram.com/hari8haran8" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://github.com/hat1412" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:hari8haran8@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-# Footer Section
-st.markdown(
-    """
-    <div class="footer">
-        <p>© 2025 Hariharan. All rights reserved.</p>
-        <p>Disclaimer: This website is for educational purposes only and not intended for medical diagnosis or treatment.</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+    with st.spinner("Analyzing..."):
+        result = predict_image(image)
+    
+    st.success(f"Prediction: {result}")
