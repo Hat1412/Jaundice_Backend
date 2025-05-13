@@ -15,7 +15,7 @@ def load_model():
         torch.nn.Linear(num_features, len(classes)),  # Update for n classes
         torch.nn.Softmax(dim=1)
     )
-    model.load_state_dict(torch.load("model_path/disease_model_with_scheduler.pth", map_location=torch.device("cpu")))
+    model.load_state_dict(torch.load("disease_model_with_scheduler.pth", map_location=torch.device("cpu")))
     model.eval()
     return model
 
@@ -43,7 +43,7 @@ st.markdown(
     body {
         font-family: 'Aptos', sans-serif;
     }
-    .stApp {
+    .stMain {
         background: #ffffff;
     }
     .main-title {
