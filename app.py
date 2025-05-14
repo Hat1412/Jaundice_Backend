@@ -81,6 +81,9 @@ st.markdown(
     [datatestid = "stFileUploadDropZone"]{
     background-color: #ffffff;
     }
+    [data-testid="stFileUploaderFileName"]{
+    color: #000;
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -112,7 +115,7 @@ if uploaded_file is not None:
 
     with st.spinner("Analyzing..."):
         result = predict_image(model, image)
-    st.success(f"Prediction: {result}")
+    st.markdown(f"<h1 style = color:#48aa15; background-color: red> Prediction: {result} </h1>", unsafe_allow_html=True)
 
 elif camera_image is not None:
     image = Image.open(io.BytesIO(camera_image.getvalue()))
@@ -121,4 +124,4 @@ elif camera_image is not None:
     with st.spinner("Analyzing..."):
         result = predict_image(model, image)
         
-    st.success(f"Prediction: {result}")
+    st.markdown(f"<h1 style = color:#48aa15; background-color: red> Prediction: {result} </h1>", unsafe_allow_html=True)
