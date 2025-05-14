@@ -120,4 +120,5 @@ elif camera_image is not None:
 
     with st.spinner("Analyzing..."):
         result = predict_image(model, image)
+        
     st.success(f"Prediction: {result}")
