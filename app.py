@@ -6,6 +6,7 @@ import io
 
 st.set_page_config(page_title="Nethvera")
 PngImagePlugin.MAX_TEXT_CHUNK = 10485760  # Increase max text chunk size for PNG images
+
 # Load model
 @st.cache_resource
 def load_model():
@@ -33,7 +34,7 @@ def predict_image(model, image):
     return classes[preds[0]]
 
 # Classes
-classes = ["Bells Palsy", "Jaundice", "Negative","Pink Eye","SLE"]  # Replace with actual class names
+classes = ["Bells Palsy", "Jaundice", "Negative", "Pink Eye", "SLE"]
 
 # Custom styles for hospital theme, font, and buttons
 st.markdown(
@@ -101,8 +102,8 @@ st.markdown("<p>Upload an image or take a photo using your camera to detect pote
 model = load_model()
 
 # Camera input
-camera_image = st.camera_input("")
-uploaded_file = st.file_uploader("", type=["jpg", "jpeg", "png"])
+camera_image = st.camera_input("Take a photo using your camera")
+uploaded_file = st.file_uploader("Upload an image file", type=["jpg", "jpeg", "png"])
 
 # Handle predictions
 if uploaded_file is not None:
@@ -110,6 +111,13 @@ if uploaded_file is not None:
     st.image(image, caption="Uploaded Image", use_container_width=True)
 
     with st.spinner("Analyzing..."):
-        result = predict_image(image)
-    
+        result = predict_image(model, image)
+    st.success(f"Prediction: {result}")
+
+elif camera_image is not None:
+    image = Image.open(io.BytesIO(camera_image.getvalue()))
+    st.image(image, caption="Captured Image", use_container_width=True)
+
+    with st.spinner("Analyzing..."):
+        result = predict_image(model, image)
     st.success(f"Prediction: {result}")
