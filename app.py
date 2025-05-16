@@ -6,7 +6,7 @@ import io
 
 st.set_page_config(page_title="Nethvera")
 PngImagePlugin.MAX_TEXT_CHUNK = 10485760  # Increase max text chunk size for PNG images
-
+st.logo(r"Nethvera_logo_light.jpeg",size="large")
 # Load model
 @st.cache_resource
 def load_model():
