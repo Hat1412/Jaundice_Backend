@@ -6,6 +6,17 @@ The system aims to enhance accessibility and early detection of jaundice, partic
 [NETHVERA](https://aidoetest1.streamlit.app/)
 
 
+# Classes
+$${
+\color{#ffd6a5}Acromegaly \space \space 
+\color{#fdffb6}Bells Palsy \space \space 
+\color{#caffbf}Diabetic Retinopathy \space \space 
+\color{#9bf6ff}Jaundice \space  \space  
+\color{#4d8584}Pink Eye \space \space 
+\color{#a0c4ff}SLE \space \space 
+\color{#bdb2ff}Strawberry Tongue \space \space 
+\color{#ffc6ff}Typhoid Spots \space\space
+}$$
 ## Features  
 1️⃣ Contactless Symptom Detection
 
