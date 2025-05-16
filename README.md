@@ -1,7 +1,6 @@
 
 # 🏥 NethVera: Jaundice Detection Backend  
-NethVera is an AI-powered system designed to non-invasively detect symptoms of jaundice using facial analysis. This repository contains the backend implementation of the Jaundice Detection module, developed using PyTorch for Deep Learning and deployed via Streamlit for a seamless user interface.
-
+NethVera is an AI-powered system designed to non-invasively detect symptoms using facial analysis. Developed using PyTorch for Deep Learning and deployed via Streamlit for a seamless user interface.
 The system aims to enhance accessibility and early detection of jaundice, particularly in resource-limited settings. By leveraging a PyTorch-based Convolutional Neural Network (CNN) trained on culturally relevant datasets, NethVera offers a scalable and accurate solution tailored to the Indian population.
 
 [NETHVERA](https://aidoetest1.streamlit.app/)
