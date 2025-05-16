@@ -4,7 +4,8 @@ NethVera is an AI-powered system designed to non-invasively detect symptoms of j
 
 The system aims to enhance accessibility and early detection of jaundice, particularly in resource-limited settings. By leveraging a PyTorch-based Convolutional Neural Network (CNN) trained on culturally relevant datasets, NethVera offers a scalable and accurate solution tailored to the Indian population.
 
----
+[NETHVERA](https://aidoetest1.streamlit.app/)
+
 
 ## Features  
 1️⃣ Contactless Symptom Detection
