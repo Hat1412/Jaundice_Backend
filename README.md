@@ -7,11 +7,15 @@ The system aims to enhance accessibility and early detection of jaundice, partic
 ---
 
 ## Features  
-- Contactless Symptom Detection: Detects jaundice symptoms based on facial images without invasive procedures.  
-- Deep Learning Model: Utilizes a PyTorch-based CNN for robust and efficient analysis.  
-- Streamlit Deployment: Provides an intuitive and user-friendly interface for interaction.  
-- Cultural Relevance: Trained on Indian datasets to ensure diagnostic precision for diverse populations.  
-- Open-Source Framework: Encourages collaboration and transparency.  
+1️⃣ Contactless Symptom Detection
+
+2️⃣ Deep Learning Model  
+
+3️⃣ Streamlit Deployment  
+
+4️⃣ Cultural Relevance  
+
+5️⃣ Open-Source Framework
 
 ## Getting Started  
 
