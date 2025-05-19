@@ -7,6 +7,8 @@ import io
 st.set_page_config(page_title="Nethvera")
 PngImagePlugin.MAX_TEXT_CHUNK = 10485760  # Increase max text chunk size for PNG images
 st.logo(r"Nethvera_logo_light.jpeg",size="large")
+
+st.toast("Hello")
 # Load model
 @st.cache_resource
 def load_model():
@@ -16,7 +18,7 @@ def load_model():
         torch.nn.Linear(num_features, len(classes)),  # Update for n classes
         torch.nn.Softmax(dim=1)
     )
-    model.load_state_dict(torch.load("disease_model_with_scheduler.pth", map_location=torch.device("cpu")))
+    model.load_state_dict(torch.load(r"new_model.pth", map_location=torch.device("cpu")))
     model.eval()
     return model
 
