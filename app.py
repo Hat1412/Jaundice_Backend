@@ -46,7 +46,10 @@ def predict_image(model, image):
     with torch.no_grad():
         outputs = model(image)
         _, preds = torch.max(outputs, 1)
-    return classes[preds[0]]
+    if classes[preds[0]] == "Negative":
+        return "No symptoms detected"
+    else:
+        return classes[preds[0]]
 
 # Classes
 classes = ['Acromegaly', 'Bells Palsy', 'Diabetic Retinopathy', 'Jaundice', 'Negative', 'Pink Eye', 'SLE', 'Strawberry Tongue', 'Typhoid Spots']
