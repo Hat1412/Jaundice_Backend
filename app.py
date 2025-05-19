@@ -8,17 +8,30 @@ st.set_page_config(page_title="Nethvera")
 PngImagePlugin.MAX_TEXT_CHUNK = 10485760  # Increase max text chunk size for PNG images
 st.logo(r"Nethvera_logo_light.jpeg",size="large")
 
-st.toast("Hello")
-# Load model
 @st.cache_resource
 def load_model():
+    # Dynamically determine the number of classes (update this as needed)
+    num_classes = len(classes)
+
+    # Load the pre-trained EfficientNet model
     model = models.efficientnet_b0(weights=None)
     num_features = model.classifier[1].in_features
+
+    # Update the classifier for the current number of classes
     model.classifier = torch.nn.Sequential(
-        torch.nn.Linear(num_features, len(classes)),  # Update for n classes
+        torch.nn.Linear(num_features, num_classes),
         torch.nn.Softmax(dim=1)
     )
-    model.load_state_dict(torch.load(r"new_model.pth", map_location=torch.device("cpu")))
+
+    try:
+        # Attempt to load the state_dict
+        state_dict = torch.load(r"new_model.pth", map_location=torch.device("cpu"))
+        # Adapt the loaded state_dict if there is a mismatch
+        state_dict['classifier.0.weight'] = state_dict['classifier.0.weight'][:num_classes]
+        state_dict['classifier.0.bias'] = state_dict['classifier.0.bias'][:num_classes]
+        model.load_state_dict(state_dict, strict=False)
+    except Exception as e:
+        st.error(f"Error loading model state_dict: {e}")
     model.eval()
     return model
 
@@ -36,7 +49,7 @@ def predict_image(model, image):
     return classes[preds[0]]
 
 # Classes
-classes = ["Bells Palsy", "Jaundice", "Negative", "Pink Eye", "SLE"]
+classes = ['Acromegaly', 'Bells Palsy', 'Diabetic Retinopathy', 'Jaundice', 'Negative', 'Pink Eye', 'SLE', 'Strawberry Tongue', 'Typhoid Spots']
 
 # Custom styles for hospital theme, font, and buttons
 st.markdown(
