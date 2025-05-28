@@ -25,7 +25,7 @@ def load_model():
 
     try:
         # Attempt to load the state_dict
-        state_dict = torch.load(r"new_model.pth", map_location=torch.device("cpu"))
+        state_dict = torch.load(r"new_model_abs.pth", map_location=torch.device("cpu"))
         # Adapt the loaded state_dict if there is a mismatch
         state_dict['classifier.0.weight'] = state_dict['classifier.0.weight'][:num_classes]
         state_dict['classifier.0.bias'] = state_dict['classifier.0.bias'][:num_classes]
